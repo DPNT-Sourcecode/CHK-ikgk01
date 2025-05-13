@@ -10,5 +10,6 @@ class SumSolution:
 def comp(x, y):
     return x + y
 
-comp(1, 2)
+print(SumSolution.compute(1, 2))
+
 

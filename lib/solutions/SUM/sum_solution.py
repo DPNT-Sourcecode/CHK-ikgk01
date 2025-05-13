@@ -7,4 +7,8 @@ class SumSolution:
     def sum(self, x, y):
         return x + y
 
-SumSolution.compute(1, 2, 3)
+def comp(x, y):
+    return x + y
+
+comp(1, 2)
+

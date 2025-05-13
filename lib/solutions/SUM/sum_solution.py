@@ -1,9 +1,6 @@
 
 class SumSolution:
     
-    def __init__(self):
-        pass
-    
     def compute(self, x, y):
         return x + y
 
@@ -13,7 +10,4 @@ class SumSolution:
 def comp(x, y):
     return x + y
 
-print(SumSolution.compute(1, 2))
-
-
-
+print(SumSolution().compute(1, 2))

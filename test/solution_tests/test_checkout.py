@@ -15,5 +15,3 @@ class TestCheckout(unittest.TestCase):
         self.assertEqual(CheckoutSolution().checkout("AAAAABBBEEEE"), 390, "Not correct!")
 
         
-
-

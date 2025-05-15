@@ -16,7 +16,7 @@ class CheckoutSolution:
             "B": {2: 45}
         }
         bogoff = {
-            "E": {2: {"B": 1}} 
+            "E": {"quantity": 2, "offer": "B", "number": 1}
         }
         allowed_characters = list(prices.keys()) #+ [",", " "]
         if len(set(skus) - set(allowed_characters)) != 0:
@@ -25,9 +25,7 @@ class CheckoutSolution:
         skus_dict = {}
         for sku in skus:
             skus_dict[sku]=skus_dict.setdefault(sku, 0)+1
-        for item, value in bogoff.items():
-            print(type(value.keys()))
-            quant, deal = value.items()
+        for item, deal in bogoff.items():
             if item in skus_dict:
                 num = skus_dict[item]
                 if num >= value:
@@ -68,4 +66,5 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBBEE"))
+
 

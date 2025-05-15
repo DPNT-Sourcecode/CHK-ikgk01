@@ -52,10 +52,3 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBBEE"))
-
-
-
-
-
-
-

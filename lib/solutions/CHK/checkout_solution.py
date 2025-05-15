@@ -21,20 +21,29 @@ class CheckoutSolution:
         if len(set(skus) - set(allowed_characters)) != 0:
             return -1
         total = 0
+        for offer, value in bogoff.items():
+            if skus.count(offer):
+                pass
         for sku in set(skus):
             count = skus.count(sku)
             if count != 0:
                 if sku in multibuys:
                     #if count >= multibuys[sku][0]:
-                    offer_counter = count
+                    multibuy_counter = count
                     for offer, value in sorted(multibuys[sku].items(), reverse=True):
-                        multiple = offer_counter // offer
-                        offer_counter = offer_counter - multiple * offer
+                        multiple = multibuy_counter // offer
+                        multibuy_counter = multibuy_counter - multiple * offer
                         total += multiple * value
                         remainder = count % offer
                         total += remainder * prices[sku]
                 else:
                     total += count * prices[sku]
+                if sku in bogoff:
+                    bogoff_counter = count
+                    for offer, value in sorted(bogoff[sku].items(), reverse=True):
+                        multiple = bogoff_counter // offer
+                        bogoff_counter = bogoff_counter - multiple * offer
+                        total
         return total
 
 

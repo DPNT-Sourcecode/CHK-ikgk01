@@ -16,7 +16,7 @@ class CheckoutSolution:
             "B": {2: 45}
         }
         bogoff = {
-            "E": {2: {"B": 2}} 
+            "E": {2: {"B": 1}} 
         }
         allowed_characters = list(prices.keys()) #+ [",", " "]
         if len(set(skus) - set(allowed_characters)) != 0:
@@ -26,8 +26,10 @@ class CheckoutSolution:
             if offer in skus:
                 count = skus.count(offer)
                 if count >= value:
-                    multiple = 0
-
+                    multiple = count // value
+                    while multiple > 0:
+                        for sku in skus
+                        multiple -= 1
                 pass
         for sku in set(skus):
             count = skus.count(sku)
@@ -53,4 +55,3 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBB"))
-

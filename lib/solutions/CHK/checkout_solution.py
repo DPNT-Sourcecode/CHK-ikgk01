@@ -21,13 +21,13 @@ class CheckoutSolution:
             count = skus.count(sku)
             if count != 0:
                 if sku in multibuys.keys():
-                    if count >= multibuys[sku][0]:
-                        multiple = count // multibuys[sku][0]
-                        total += multiple * multibuys[sku][1]
-                        remainder = count % multibuys[sku][0]
-                        total += remainder * prices[sku]
-                    else:
-                        total += count * prices[sku]
+                    #if count >= multibuys[sku][0]:
+                    multiple = count // multibuys[sku][0]
+                    total += multiple * multibuys[sku][1]
+                    remainder = count % multibuys[sku][0]
+                    total += remainder * prices[sku]
+                else:
+                    total += count * prices[sku]
         return total
 
 print(CheckoutSolution().checkout("aaabb"))

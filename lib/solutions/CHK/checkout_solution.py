@@ -30,9 +30,10 @@ class CheckoutSolution:
                 num = skus_dict[item]
                 if num >= deal["quantity"]:
                     offer_num = num
-                    if deal[offer] in skus_dict:
-                        while offer_num >= value:
-                            skus_dict[deal[offer]] = max(0, skus_dict[deal[offer]] - deal["number"])
+                    if deal["offer"] in skus_dict:
+                        while offer_num >= deal["number"]:
+                            skus_dict[deal["offer"]] = max(0, skus_dict[deal["offer"]] - deal["number"])
+                            offer_num -= deal["number"]
         for sku in set(skus):
             count = skus.count(sku)
             if count != 0:
@@ -57,6 +58,7 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBBEE"))
+
 
 
 

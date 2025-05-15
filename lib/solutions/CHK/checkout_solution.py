@@ -88,4 +88,4 @@ class CheckoutSolution:
         return total
 
 
-#print(CheckoutSolution().checkout("AAAAABBBEEFFFF"))
+print(CheckoutSolution().checkout("AAAAABBBEEFFFFSSS"))

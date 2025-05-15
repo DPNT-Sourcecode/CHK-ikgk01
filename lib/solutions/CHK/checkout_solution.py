@@ -3,6 +3,7 @@ class CheckoutSolution:
 
     # skus = unicode string
     def checkout(self, skus):
+        skus = list(skus)
         prices = {
             "A": 50,
             "B": 30,
@@ -22,7 +23,11 @@ class CheckoutSolution:
             return -1
         total = 0
         for offer, value in bogoff.items():
-            if skus.count(offer):
+            if offer in skus:
+                count = skus.count(offer)
+                if count >= value:
+                    multiple = 0
+
                 pass
         for sku in set(skus):
             count = skus.count(sku)
@@ -48,3 +53,4 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBB"))
+

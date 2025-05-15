@@ -26,9 +26,10 @@ class CheckoutSolution:
             if count != 0:
                 if sku in multibuys:
                     #if count >= multibuys[sku][0]:
+                    offer_counter = count
                     for offer, value in sorted(multibuys[sku].items(), reverse=True):
-                        multiple = count // offer
-                        count = count - multiple * offer
+                        multiple = offer_counter // offer
+                        offer_counter = offer_counter - multiple * offer
                     total += multiple * value
                     remainder = count % offer
                     total += remainder * prices[sku]
@@ -38,4 +39,5 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBB"))
+
 

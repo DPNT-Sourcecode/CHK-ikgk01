@@ -3,18 +3,17 @@ class CheckoutSolution:
 
     # skus = unicode string
     def checkout(self, skus):
-        skus = skus.lower()
         prices = {
-            "a": 50,
-            "b": 30,
-            "c": 20,
-            "d": 15 
+            "A": 50,
+            "B": 30,
+            "C": 20,
+            "D": 15 
         }
         multibuys = {
-            "a": (3, 130),
-            "b": (2, 45)
+            "A": (3, 130),
+            "B": (2, 45)
         }
-        allowed_characters = list(prices.keys()) + [",", " "]
+        allowed_characters = list(prices.keys()) #+ [",", " "]
         if len(set(skus) - set(allowed_characters)) != 0:
             return -1
         total = 0
@@ -30,3 +29,4 @@ class CheckoutSolution:
                 else:
                     total += count * prices[sku]
         return total
+

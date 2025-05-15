@@ -71,7 +71,7 @@ class CheckoutSolution:
                 while i > 0:
                     itm = multibuy_list.pop()
                     skus_dict[itm["sku"]] -= 1
-
+                    i -= 1
                 total += itm["cost"]
         for item, deal in bogoff.items():
             if item in skus_dict:
@@ -100,4 +100,5 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBBEEFFFFSSSTT"))
+
 

@@ -39,6 +39,3 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBB"))
-
-
-

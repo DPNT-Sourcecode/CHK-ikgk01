@@ -58,7 +58,7 @@ class CheckoutSolution:
         for multibuy in xfory:
             multibuy_list = []
             for prod in multibuy["list"]:
-                multibuy_list + list(filter(lambda x: x == prod, skus))
+                multibuy_list += list(filter(lambda x: x == prod, skus))
         skus_dict = {}
         for sku in skus:
             skus_dict[sku]=skus_dict.setdefault(sku, 0)+1

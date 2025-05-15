@@ -48,10 +48,17 @@ class CheckoutSolution:
             "R": {"quantity": 3, "offer": "Q", "number": 1},
             "U": {"quantity": 3, "offer": "U", "number": 1},
         }
+        xfory = [
+            {"quantity": 3, "list": ["S", "T", "X", "Y", "Z"], "price": 45}
+        ]
         allowed_characters = list(prices.keys()) #+ [",", " "]
         if len(set(skus) - set(allowed_characters)) != 0:
             return -1
         total = 0
+        for multibuy in xfory:
+            multibuy_list = []
+            for prod in multibuy["list"]:
+                multibuy_list + list(filter(lambda x: x == prod, skus))
         skus_dict = {}
         for sku in skus:
             skus_dict[sku]=skus_dict.setdefault(sku, 0)+1
@@ -67,17 +74,14 @@ class CheckoutSolution:
                             skus_dict[deal["offer"]] = max(0, skus_dict[deal["offer"]] - deal["number"])
                             offer_num -= cart_quantity
         for sku, quantity in skus_dict.items():
-            count = skus.count(sku)
             if quantity != 0:
                 if sku in multibuys:
                     #if count >= multibuys[sku][0]:
                     multibuy_counter = quantity
-                    remainder = 0
                     for offer, value in sorted(multibuys[sku].items(), reverse=True):
                         multiple = multibuy_counter // offer
                         multibuy_counter = multibuy_counter - multiple * offer
                         total += multiple * value
-                        remainder = quantity % offer
                     total += multibuy_counter * prices[sku]
                 else:
                     total += quantity * prices[sku]

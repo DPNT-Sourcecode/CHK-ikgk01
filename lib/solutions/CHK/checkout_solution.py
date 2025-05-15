@@ -100,6 +100,3 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("SSSTTS"))
-
-
-

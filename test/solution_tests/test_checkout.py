@@ -8,9 +8,5 @@ class TestCheckout(unittest.TestCase):
         self.assertEqual(CheckoutSolution().checkout("aaabb"), 175, "Not correct!")
         self.assertEqual(CheckoutSolution().checkout("aaaabbb"), 255, "Not correct!")
         self.assertEqual(CheckoutSolution().checkout("abcd"), 115, "Not correct!")
-        self.assertEqual(CheckoutSolution().checkout("aaabb"), 175, "Not correct!")
-        self.assertEqual(CheckoutSolution().checkout("aaabb"), 175, "Not correct!")
-        
-        #self.assertEqual(Calculator.add(-6, 4), -2, "Not correct!")
-        #self.assertEqual(Calculator.add(6, -4), 2, "Not correct!")
-        #self.assertEqual(Calculator.add(-6, -4), -10, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("AAABB"), 175, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("R"), -1, "Not correct!")

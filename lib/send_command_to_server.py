@@ -13,7 +13,7 @@ from runner.user_input_action import get_user_input
     From IDE:
        Run this file from the IDE.
  
-    From command line:
+    From command line:pa
        PYTHONPATH=lib python lib/send_command_to_server.py
  
     To run your unit tests locally:
@@ -77,3 +77,4 @@ ChallengeSession\
     .with_config(Utils.get_config())\
     .with_action_provider(lambda: get_user_input(sys.argv[1:]))\
     .start()
+

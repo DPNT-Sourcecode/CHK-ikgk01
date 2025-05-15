@@ -43,7 +43,10 @@ class CheckoutSolution:
         }
         bogoff = {
             "E": {"quantity": 2, "offer": "B", "number": 1},
-            "F": {"quantity": 2, "offer": "F", "number": 1}
+            "F": {"quantity": 2, "offer": "F", "number": 1},
+            "N": {"quantity": 3, "offer": "M", "number": 1},
+            "R": {"quantity": 3, "offer": "Q", "number": 1},
+            "U": {"quantity": 3, "offer": "U", "number": 1},
         }
         allowed_characters = list(prices.keys()) #+ [",", " "]
         if len(set(skus) - set(allowed_characters)) != 0:

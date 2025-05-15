@@ -28,7 +28,8 @@ class CheckoutSolution:
                 if count >= value:
                     multiple = count // value
                     while multiple > 0:
-                        for sku in skus
+                        for sku in skus:
+                            pass
                         multiple -= 1
                 pass
         for sku in set(skus):

@@ -51,4 +51,4 @@ class CheckoutSolution:
         return total
 
 
-print(CheckoutSolution().checkout("AAAAABBBEE"))
+print(CheckoutSolution().checkout("AAAABBB"))

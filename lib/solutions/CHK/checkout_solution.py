@@ -26,7 +26,7 @@ class CheckoutSolution:
         for sku in skus:
             skus_dict[sku]=skus_dict.setdefault(sku, 0)+1
         for item, value in bogoff.items():
-            quant, deal = value.items()
+            (quant, deal) = value.items()
             if item in skus_dict:
                 num = skus_dict[item]
                 if num >= value:

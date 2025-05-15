@@ -30,4 +30,4 @@ class CheckoutSolution:
                         total += count * prices[sku]
         return total
 
-print(CheckoutSolution().checkout("aaa"))
+print(CheckoutSolution().checkout("aaabb"))

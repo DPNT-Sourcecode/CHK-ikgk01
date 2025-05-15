@@ -19,9 +19,14 @@ class TestCheckout(unittest.TestCase):
         self.assertEqual(CheckoutSolution().checkout("HHHHH"), 45, "Not correct!")
         self.assertEqual(CheckoutSolution().checkout("HHHHHH"), 55, "Not correct!")
         self.assertEqual(CheckoutSolution().checkout("HHHHHHHHHH"), 80, "Not correct!")
-        self.assertEqual(CheckoutSolution().checkout("r"), -1, "Not correct!")
-        self.assertEqual(CheckoutSolution().checkout("r"), -1, "Not correct!")
-        self.assertEqual(CheckoutSolution().checkout("r"), -1, "Not correct!")
-        self.assertEqual(CheckoutSolution().checkout("r"), -1, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("I"), 35, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("J"), 60, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("K"), 80, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("KK"), 150, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("L"), 90, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("M"), 15, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("N"), 40, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("NNM"), 80, "Not correct!")
 
         
+

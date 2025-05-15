@@ -46,5 +46,8 @@ class TestCheckout(unittest.TestCase):
         self.assertEqual(CheckoutSolution().checkout("X"), 90, "Not correct!")
         self.assertEqual(CheckoutSolution().checkout("Y"), 10, "Not correct!")
         self.assertEqual(CheckoutSolution().checkout("Z"), 50, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("STXYZZ"), 90, "Not correct!")
+        self.assertEqual(CheckoutSolution().checkout("STXYZ"), 82, "Not correct!")
 
         
+

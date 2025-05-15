@@ -22,6 +22,9 @@ class CheckoutSolution:
         if len(set(skus) - set(allowed_characters)) != 0:
             return -1
         total = 0
+        skus_dict = {}
+        for sku in skus:
+            skus_dict[sku]=skus_dict.setdefault(sku, 0)+1
         for offer, value in bogoff.items():
             if offer in skus:
                 count = skus.count(offer)
@@ -56,3 +59,4 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBB"))
+

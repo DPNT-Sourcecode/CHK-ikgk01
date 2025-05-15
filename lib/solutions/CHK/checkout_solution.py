@@ -59,6 +59,7 @@ class CheckoutSolution:
             multibuy_list = []
             for prod in multibuy["list"]:
                 multibuy_list += list(filter(lambda x: x == prod, skus))
+                multibuy_dict = {}
         skus_dict = {}
         for sku in skus:
             skus_dict[sku]=skus_dict.setdefault(sku, 0)+1
@@ -88,4 +89,4 @@ class CheckoutSolution:
         return total
 
 
-print(CheckoutSolution().checkout("AAAAABBBEEFFFFSSS"))
+print(CheckoutSolution().checkout("AAAAABBBEEFFFFSSSTT"))

@@ -9,14 +9,16 @@ class CheckoutSolution:
             "B": 30,
             "C": 20,
             "D": 15,
-            "E": 40
+            "E": 40,
+            "F": 10,
         }
         multibuys = {
             "A": {3: 130, 5: 200},
             "B": {2: 45}
         }
         bogoff = {
-            "E": {"quantity": 2, "offer": "B", "number": 1}
+            "E": {"quantity": 2, "offer": "B", "number": 1},
+            "F": {"quantity": 2, "offer": "F", "number": 1}
         }
         allowed_characters = list(prices.keys()) #+ [",", " "]
         if len(set(skus) - set(allowed_characters)) != 0:
@@ -52,4 +54,4 @@ class CheckoutSolution:
         return total
 
 
-print(CheckoutSolution().checkout("AAAAABBBEE"))
+print(CheckoutSolution().checkout("AAAAABBBEEFF"))

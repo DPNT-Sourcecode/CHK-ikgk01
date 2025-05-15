@@ -30,14 +30,15 @@ class CheckoutSolution:
                     for offer, value in sorted(multibuys[sku].items(), reverse=True):
                         multiple = offer_counter // offer
                         offer_counter = offer_counter - multiple * offer
-                    total += multiple * value
-                    remainder = count % offer
-                    total += remainder * prices[sku]
+                        total += multiple * value
+                        remainder = count % offer
+                        total += remainder * prices[sku]
                 else:
                     total += count * prices[sku]
         return total
 
 
 print(CheckoutSolution().checkout("AAAAABBB"))
+
 
 

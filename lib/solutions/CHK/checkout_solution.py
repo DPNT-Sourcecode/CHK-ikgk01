@@ -27,6 +27,7 @@ class CheckoutSolution:
             skus_dict[sku]=skus_dict.setdefault(sku, 0)+1
         for deal, value in bogoff.items():
             if deal in skus_dict:
+                num = skus_dict[deal]
                 if skus_dict[deal]:
                     offer_num = skus_dict[deal]
                     while offer_num >= value:
@@ -64,5 +65,6 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBBEE"))
+
 
 

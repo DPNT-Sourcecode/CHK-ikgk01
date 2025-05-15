@@ -29,4 +29,3 @@ class CheckoutSolution:
                 else:
                     total += count * prices[sku]
         return total
-

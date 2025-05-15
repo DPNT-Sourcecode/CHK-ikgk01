@@ -57,6 +57,8 @@ class CheckoutSolution:
             return -1
         total = 0
         skus_dict = {}
+        for sku in skus:
+            skus_dict[sku]=skus_dict.setdefault(sku, 0)+1
         for multibuy in xfory:
             multibuy_list = []
             for prod in multibuy["list"]:
@@ -71,8 +73,6 @@ class CheckoutSolution:
                     skus_dict[itm["sku"]] -= 1
 
                 total += itm["cost"]
-        for sku in skus:
-            skus_dict[sku]=skus_dict.setdefault(sku, 0)+1
         for item, deal in bogoff.items():
             if item in skus_dict:
                 num = skus_dict[item]
@@ -100,3 +100,4 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBBEEFFFFSSSTT"))
+

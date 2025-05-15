@@ -72,7 +72,7 @@ class CheckoutSolution:
                     itm = multibuy_list.pop()
                     skus_dict[itm["sku"]] -= 1
                     i -= 1
-                total += itm["cost"]
+                total += multibuy["price"]
         for item, deal in bogoff.items():
             if item in skus_dict:
                 num = skus_dict[item]
@@ -99,6 +99,6 @@ class CheckoutSolution:
         return total
 
 
-print(CheckoutSolution().checkout("AAAAABBBEEFFFFSSSTT"))
+print(CheckoutSolution().checkout("SSSTTS"))
 
 

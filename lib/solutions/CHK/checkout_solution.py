@@ -85,4 +85,3 @@ class CheckoutSolution:
 
 
 #print(CheckoutSolution().checkout("AAAAABBBEEFFFF"))
-

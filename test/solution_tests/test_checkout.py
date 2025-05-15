@@ -48,6 +48,3 @@ class TestCheckout(unittest.TestCase):
         self.assertEqual(CheckoutSolution().checkout("Z"), 50, "Not correct!")
 
         
-
-
-

@@ -1,3 +1,4 @@
+from operator import itemgetter
 
 class CheckoutSolution:
 
@@ -55,12 +56,21 @@ class CheckoutSolution:
         if len(set(skus) - set(allowed_characters)) != 0:
             return -1
         total = 0
+        skus_dict = {}
         for multibuy in xfory:
             multibuy_list = []
             for prod in multibuy["list"]:
-                multibuy_list += list(filter(lambda x: x == prod, skus))
-                multibuy_dict = {}
-        skus_dict = {}
+                for sku in skus:
+                    if sku == prod:
+                        multibuy_list.append({"sku": sku, "cost": prices[sku]})
+            multibuy_list.sort(key=itemgetter("cost"))
+            while len(multibuy_list) >= multibuy["quantity"]:
+                i = multibuy["quantity"]
+                while i > 0:
+                    itm = multibuy_list.pop()
+                    skus_dict[itm["sku"]] -= 1
+
+                total += itm["cost"]
         for sku in skus:
             skus_dict[sku]=skus_dict.setdefault(sku, 0)+1
         for item, deal in bogoff.items():

@@ -34,9 +34,9 @@ class CheckoutSolution:
                         while offer_num >= deal["quantity"]:
                             skus_dict[deal["offer"]] = max(0, skus_dict[deal["offer"]] - deal["number"])
                             offer_num -= deal["quantity"]
-        for sku in set(skus):
+        for sku, quantity in skus_dict.items():
             count = skus.count(sku)
-            if count != 0:
+            if quantity != 0:
                 if sku in multibuys:
                     #if count >= multibuys[sku][0]:
                     multibuy_counter = count
@@ -47,17 +47,12 @@ class CheckoutSolution:
                         remainder = count % offer
                         total += remainder * prices[sku]
                 else:
-                    total += count * prices[sku]
-                if sku in bogoff:
-                    bogoff_counter = count
-                    for offer, value in sorted(bogoff[sku].items(), reverse=True):
-                        multiple = bogoff_counter // offer
-                        bogoff_counter = bogoff_counter - multiple * offer
-                        total
+                    total += quantity * prices[sku]
         return total
 
 
 print(CheckoutSolution().checkout("AAAAABBBEE"))
+
 
 
 

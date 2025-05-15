@@ -28,9 +28,10 @@ class CheckoutSolution:
         for deal, value in bogoff.items():
             if deal in skus_dict:
                 num = skus_dict[deal]
-                if skus_dict[deal]:
-                    offer_num = skus_dict[deal]
+                if num >= value:
+                    offer_num = num
                     while offer_num >= value:
+                        a = skus_dict[value]
                         pass
 
                 count = skus.count(offer)
@@ -65,6 +66,7 @@ class CheckoutSolution:
 
 
 print(CheckoutSolution().checkout("AAAAABBBEE"))
+
 
 
 
